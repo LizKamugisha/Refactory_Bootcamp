@@ -1,0 +1,99 @@
+Single Responsbility Principle (SRP).
+-------------------------------
+- Computer
+    - input
+    - store
+    - process
+    - output
+
+
+Open closed Principle (OCP).
+------------------------------
+- Secondary School (S1->S3)
+    - student
+        - fees = [{functionalFees:500,000}]
+        - subjects = ["MTC", "SCI", "ENG", "LIT"]
+        - uniform = [{shirt:"white",trouser:"maroon",sweater:"maroon"}]
+    
+    - S1to2Student
+    - S3to4Student
+    - S5to6Student
+
+Liskov Subsititution Principle (LSP).
+------------------------------
+- Bird
+    - swimming
+    - feeding
+    - flying
+    - quacking
+
+- Dark is-A Bird
+    - can swim
+    - can feed
+    - can fly
+    - can quack
+- Hen is-A Bird
+    - can not swim
+    - can feed
+    - can fly
+    - can not quack
+
+- Penguin is-A Bird
+    - can swim
+    - can feed
+    - can not fly
+    - can not quack
+
+function liskovComplianceTest(){
+
+}
+
+
+Interface Segregation Principle (ISP)
+------------------------------
+- Bird
+    - swimming
+    - feeding
+    - flying
+    - quacking
+
+- Dark is-A Bird
+    - can swim
+    - can feed
+    - can fly
+    - can quack
+- Hen is-A Bird
+    - can not swim
+    - can feed
+    - can fly
+    - can not quack
+
+- Penguin is-A Bird
+    - can swim
+    - can feed
+    - can not fly
+    - can not quack
+
+Dependency Inversion Principle (DIP).
+-------------------------------------
+
+- Interswitch ATM Machine (High Level Module)
+    - inputCard()
+    - validateCard()
+    - processPayment()
+    - ejectCard()
+    - dispenseMoney()
+    - issueReceipt()
+
+- VisaCard (Low Level Module)
+- MasterCard (Low Level Module)
+- AmericanExpress (Low Level Module)
+- Maesetro (Low Level Module)
+- citi (Low Level Module)
+---
+
+CreditCard
+    details = {cvv:"", exp:"04/21", name:"john Doe"}
+    validate();
+    getBalance();
+    debit()
