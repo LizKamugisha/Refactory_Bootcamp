@@ -6,44 +6,57 @@ We use a constructer when we want to paramiterise or specify the class variables
 If we choose not to use constructors, we can simply set fixed variables or use a setter in the parent class
 */
 
-// Example 1: The use of super() Method during inheritance.
-class Person {
-    // Variables
-    name: string
-    gender: string
-    // Methods
-    constructor(nameArg, genferArg) {
-        this.name = nameArg;
-        this.gender = genferArg;
+// Example 1: The Super() Method
+/*
+class Parent {
+    surname: string;
+    skinColour: string;
+    constructor(surname, skinColour) {
+        this.surname = surname;
+        this.skinColour = skinColour;
     }
-    talk() {
-        console.log(`I am a Person called ${this.name}`);
+};
+class Child extends Parent {
+    gender: string;
+    constructor(surname, skinColour, gender) {
+        super(surname, skinColour)
+        this.gender = gender;
+    }
+};
+let daughter = new Child("Mugisha", "brown", "Female")
+console.log(daughter);
+*/
+
+// Example 2:  Multilevel inheritance
+class Grandparent {
+    bloodtype: string = "O"
+    getBloodType() {
+        console.log("I am bloodtype O")
+    }
+};
+class Parent extends Grandparent {
+    eyeColor: string = "blue eyes"
+    constructor() {
+        super()
+    }
+    getEyeColor() {
+        console.log("I have blue eyes")
+    }
+};
+class Child extends Parent {
+    height: number = 6
+    constructor() {
+        super()
+    }
+    getHeight() {
+        console.log(`I am ${this.height}ft tall`)
     }
 };
 
-class Parent extends Person {
-    // Variables
-    numberOfChildren = 2
-    // Methods
-    constructor(nameArg, genferArg, numberOfChildrenArg) {
-        super(nameArg, genferArg)
-        this.numberOfChildren = numberOfChildrenArg;
-    }
-
-    talk() {
-        console.log(`I am a Parent called ${this.name} and have ${this.numberOfChildren} children`);
-    }
-}
-
-// Testing
-let person1 = new Person("Liz", "Female")
-person1.talk();
-
-let person2 = new Parent("Mary", "Female", 2)
-person2.talk();
-
-// Example 2:  Multilevel inheritance
+let son = new Child
+son.getBloodType();
+son.getEyeColor();
+son.getHeight();
 
 // Example 3:  Multiple Inheritance
 
-// 5 examples of when to use inheritance

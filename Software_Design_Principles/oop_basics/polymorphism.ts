@@ -19,67 +19,44 @@ When we create variables in the super-type rather than in subtype, its type and 
 
 // Example 1: Method Overriding
 class Person {
-    // Methods
     talk() {
         console.log("I am a person");
     }
 };
-class Staff extends Person {
-    // Methods
+class Woman extends Person {
     talk() {
-        console.log("I am a staff member");
+        console.log("I am a Woman");
     }
 };
-class Student extends Person {
-    // Methods
+class Man extends Person {
     talk() {
-        console.log("I am a student");
+        console.log("I am a Man");
     }
-}
+};
 /*
-Note: the scope of the variables below are limited to the subtype they are assigned to
-
+Note: the scope of the variables below 
+are limited to the subtype they are assigned to
+*/
 let person = new Person();
 person.talk();
+let woman = new Woman();
+woman.talk();
+let man = new Man();
+man.talk();
 
-let staff = new Staff();
-staff.talk();
-
-let student = new Student();
-student.talk();
-*/
 
 // Example 2: SubType Polymorphism 
-
-let person: Person = new Person();
-person.talk();
-
-person = new Staff()
-person.talk();
-
-person = new Student()
-person.talk();
-
 class Animal {
     communicate() {
-        console.log("sound");
+        console.log("animal sound");
     }
-}
-
+};
 class Cow extends Animal {
     communicate() {
         console.log("Moo!");
     }
-}
-
-// Instead of creating an instance like this
-// let animal = new Animal();
-// animal.communicate();
-
-// let cow = new Cow();
-// cow.communicate();
-
-// We use subtype to create instance from the super class
+};
+// Using subtype to create instance from the super class
 let animal: Animal
 animal = new Cow;
 animal.communicate();

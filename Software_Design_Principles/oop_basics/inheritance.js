@@ -18,39 +18,65 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// Example 1: The use of super() Method during inheritance.
-var Person = /** @class */ (function () {
-    // Methods
-    function Person(nameArg, genferArg) {
-        this.name = nameArg;
-        this.gender = genferArg;
+// Example 1: The Super() Method
+/*
+class Parent {
+    surname: string;
+    skinColour: string;
+    constructor(surname, skinColour) {
+        this.surname = surname;
+        this.skinColour = skinColour;
     }
-    Person.prototype.talk = function () {
-        console.log("I am a Person called " + this.name);
+};
+class Child extends Parent {
+    gender: string;
+    constructor(surname, skinColour, gender) {
+        super(surname, skinColour)
+        this.gender = gender;
+    }
+};
+let daughter = new Child("Mugisha", "brown", "Female")
+console.log(daughter);
+*/
+// Example 2:  Multilevel inheritance
+var Grandparent = /** @class */ (function () {
+    function Grandparent() {
+        this.bloodtype = "O";
+    }
+    Grandparent.prototype.getBloodType = function () {
+        console.log("I am bloodtype O");
     };
-    return Person;
+    return Grandparent;
 }());
 ;
 var Parent = /** @class */ (function (_super) {
     __extends(Parent, _super);
-    // Methods
-    function Parent(nameArg, genferArg, numberOfChildrenArg) {
-        var _this = _super.call(this, nameArg, genferArg) || this;
-        // Variables
-        _this.numberOfChildren = 2;
-        _this.numberOfChildren = numberOfChildrenArg;
+    function Parent() {
+        var _this = _super.call(this) || this;
+        _this.eyeColor = "blue eyes";
         return _this;
     }
-    Parent.prototype.talk = function () {
-        console.log("I am a Parent called " + this.name + " and have " + this.numberOfChildren + " children");
+    Parent.prototype.getEyeColor = function () {
+        console.log("I have blue eyes");
     };
     return Parent;
-}(Person));
-// Testing
-var person1 = new Person("Liz", "Female");
-person1.talk();
-var person2 = new Parent("Mary", "Female", 2);
-person2.talk();
-// Example 2:  Multilevel inheritance
+}(Grandparent));
+;
+var Child = /** @class */ (function (_super) {
+    __extends(Child, _super);
+    function Child() {
+        var _this = _super.call(this) || this;
+        _this.height = 6;
+        return _this;
+    }
+    Child.prototype.getHeight = function () {
+        console.log("I am " + this.height + "ft tall");
+    };
+    return Child;
+}(Parent));
+;
+var son = new Child;
+son.getBloodType();
+son.getEyeColor();
+son.getHeight();
 // Example 3:  Multiple Inheritance
-// 5 examples of when to use inheritance

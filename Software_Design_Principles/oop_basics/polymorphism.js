@@ -33,63 +33,54 @@ var __extends = (this && this.__extends) || (function () {
 var Person = /** @class */ (function () {
     function Person() {
     }
-    // Methods
     Person.prototype.talk = function () {
         console.log("I am a person");
     };
     return Person;
 }());
 ;
-var Staff = /** @class */ (function (_super) {
-    __extends(Staff, _super);
-    function Staff() {
+var Woman = /** @class */ (function (_super) {
+    __extends(Woman, _super);
+    function Woman() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    // Methods
-    Staff.prototype.talk = function () {
-        console.log("I am a staff member");
+    Woman.prototype.talk = function () {
+        console.log("I am a Woman");
     };
-    return Staff;
+    return Woman;
 }(Person));
 ;
-var Student = /** @class */ (function (_super) {
-    __extends(Student, _super);
-    function Student() {
+var Man = /** @class */ (function (_super) {
+    __extends(Man, _super);
+    function Man() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    // Methods
-    Student.prototype.talk = function () {
-        console.log("I am a student");
+    Man.prototype.talk = function () {
+        console.log("I am a Man");
     };
-    return Student;
+    return Man;
 }(Person));
+;
 /*
-Note: the scope of the variables below are limited to the subtype they are assigned to
-
-let person = new Person();
-person.talk();
-
-let staff = new Staff();
-staff.talk();
-
-let student = new Student();
-student.talk();
+Note: the scope of the variables below
+are limited to the subtype they are assigned to
 */
-// Example 2: SubType Polymorphism 
 var person = new Person();
 person.talk();
-person = new Staff();
-person.talk();
-person = new Student();
-person.talk();
+var woman = new Woman();
+woman.talk();
+var man = new Man();
+man.talk();
+// Example 2: SubType Polymorphism 
 var Animal = /** @class */ (function () {
     function Animal() {
     }
     Animal.prototype.communicate = function () {
-        console.log("sound");
+        console.log("animal sound");
     };
     return Animal;
 }());
+;
 var Cow = /** @class */ (function (_super) {
     __extends(Cow, _super);
     function Cow() {
@@ -100,12 +91,8 @@ var Cow = /** @class */ (function (_super) {
     };
     return Cow;
 }(Animal));
-// Instead of creating an instance like this
-// let animal = new Animal();
-// animal.communicate();
-// let cow = new Cow();
-// cow.communicate();
-// We use subtype to create instance from the super class
+;
+// Using subtype to create instance from the super class
 var animal;
 animal = new Cow;
 animal.communicate();
