@@ -6,15 +6,15 @@ c: true,
 };
 
 // Object Factory
-function car() {
+function Car() {
     return {
       wheels: 4,
       drive: function() {},
     };
   };
   
-var toyota = car();
-var subaru = car();
+var toyota = Car();
+var subaru = Car();
 
 // Object Constructor
 function Person(first, last, age, height) {
