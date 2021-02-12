@@ -14,5 +14,9 @@
     "chai": "^4.3.0",
     "eslint": "^7.19.0",
     "mocha": "^8.2.1"
+  },
+  "dependencies": {
+    "node-json-file-storage": "^1.1.0",
+    "sinon": "^9.2.4"
   }
 }

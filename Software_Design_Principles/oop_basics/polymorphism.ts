@@ -6,7 +6,7 @@ Poly - multi, many
 morph - form
 ism - process
 
-The ability of an object (or properties of an object) to exisit in more than one form
+The ability of an object (or properties of an object) to exist in more than one form
 Saves use of memory space
 
 1) Overloading (object methods) - not supported in Javascript, it defaults to overriding
@@ -19,6 +19,7 @@ When we create variables in the super-type rather than in subtype, its type and 
 
 // Example 1: Method Overriding
 class Person {
+    getFullName: () => string;
     talk() {
         console.log("I am a person");
     }
