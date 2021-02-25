@@ -1,0 +1,24 @@
+{
+    "contacts": [
+        {
+            "first name": "John",
+            "last name": "Doe",
+            "phone number": "23"
+        },
+        {
+            "first name": "Jill",
+            "last name": "Hill",
+            "phone number": "33"
+        },
+        {
+            "first name": "Jackie",
+            "last name": "Mugisha",
+            "phone number": "52"
+        },
+        {
+            "first name": "Jack",
+            "last name": "Okello",
+            "phone number": "40"
+        }
+    ]
+}
